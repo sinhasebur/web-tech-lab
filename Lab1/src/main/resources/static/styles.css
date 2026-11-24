@@ -1,0 +1,164 @@
+:root {
+    --ink: #161616;
+    --muted: #525259;
+    --line: #d0d0d4;
+    --blue: #002fa7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #f7f7f8;
+    line-height: 1.5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    max-width: 75rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 4rem);
+    background: #fff;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr minmax(18rem, 26rem);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    margin-top: clamp(3rem, 12vh, 8rem);
+    padding-bottom: 3rem;
+}
+
+h1 {
+    margin: 0;
+    color: var(--blue);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+}
+
+.workspace {
+    min-width: 0;
+    border-top: 4px solid var(--blue);
+    padding-top: 1.5rem;
+}
+
+p {
+    margin: 0 0 1.25rem;
+}
+
+#message {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+#message:empty {
+    margin: 0;
+}
+
+label, dt {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--muted);
+    border-radius: 0;
+    background: #fff;
+    color: inherit;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+small {
+    display: block;
+    margin: -0.85rem 0 1.25rem;
+    color: var(--muted);
+}
+
+button {
+    min-height: 2.75rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--blue);
+    border-radius: 0;
+    background: var(--blue);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button.quiet {
+    padding-inline: 0;
+    border-color: transparent;
+    background: transparent;
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 0.23em;
+}
+
+button:hover:not(:disabled) {
+    text-decoration: underline;
+    text-underline-offset: 0.23em;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+
+:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+#switch-mode {
+    margin-top: 0.6rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+}
+
+dl {
+    margin: 0 0 1.5rem;
+}
+
+dd {
+    margin: 0 0 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 42rem) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
